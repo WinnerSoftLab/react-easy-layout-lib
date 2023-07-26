@@ -48,7 +48,7 @@ export default class Row extends Component {
         alignSelf: selfAlignPropType.isRequired,
         grow: PropTypes.bool.isRequired,
         shrink: PropTypes.bool.isRequired,
-        statics: PropTypes.bool.isRequired
+        static: PropTypes.bool.isRequired
     };
 
     static defaultProps = {
@@ -65,7 +65,7 @@ export default class Row extends Component {
         alignSelf: AUTO,
         grow: true,
         shrink: true,
-        statics: false
+        static: false
     };
 
     render() {
@@ -77,7 +77,7 @@ export default class Row extends Component {
             className={this.props.className}
             grow={this.props.grow}
             shrink={this.props.shrink}
-            statics={this.props.statics}
+            static={this.props.static}
             isRowWrapper={this.props.fix}
             style={this.props.style}
         >

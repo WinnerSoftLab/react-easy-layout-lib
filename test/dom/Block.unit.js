@@ -1,15 +1,15 @@
 import {Block} from 'dom';
 
 describe('Block', () => {
-    it('should render statics if statics provided', () => {
-        const element = renderElement(<Block statics={true} />);
+    it('should render static if static provided', () => {
+        const element = renderElement(<Block static={true} />);
 
         expect(element).to.have.className('easy-layout-Block_static');
     });
 
-    it('should render statics if statics AND grow or shrink provided anyway', () => {
+    it('should render static if static AND grow or shrink provided anyway', () => {
         const element = renderElement(<Block
-            statics={true}
+            static={true}
             grow={true}
             shrink={true}
         />);
@@ -22,9 +22,9 @@ describe('Block', () => {
         expect(element).not.to.have.className('easy-layout-Block_shrink');
     });
 
-    it('should grow and shrink if not statics', () => {
+    it('should grow and shrink if not static', () => {
         const element = renderElement(<Block
-            statics={false}
+            static={false}
             grow={true}
             shrink={true}
         />);
