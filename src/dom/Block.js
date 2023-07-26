@@ -34,7 +34,7 @@ export default class Block extends Component {
         width: '',
         height: '',
         isRowWrapper: false,
-        static: false
+        statics: false
     };
 
     static propTypes = {
@@ -51,7 +51,7 @@ export default class Block extends Component {
         alignSelf: selfAlignPropType.isRequired,
         grow: PropTypes.bool.isRequired,
         shrink: PropTypes.bool.isRequired,
-        static: PropTypes.bool.isRequired,
+        statics: PropTypes.bool.isRequired,
         style: PropTypes.any // eslint-disable-line react/forbid-prop-types
     };
 
@@ -77,12 +77,12 @@ export default class Block extends Component {
 
         return <div style={styles} className={bem({
             isRowWrapper: this.props.isRowWrapper,
-            static: this.props.static,
+            statics: this.props.statics,
             alignSelf: this.props.alignSelf,
-            grow: this.props.grow && !this.props.static,
-            noGrow: !this.props.grow || this.props.static,
-            shrink: this.props.shrink && !this.props.static,
-            noShrink: !this.props.shrink || this.props.static
+            grow: this.props.grow && !this.props.statics,
+            noGrow: !this.props.grow || this.props.statics,
+            shrink: this.props.shrink && !this.props.statics,
+            noShrink: !this.props.shrink || this.props.statics
         }) + ' ' + (this.props.className  || '')}>
             {this.props.children}
         </div>;

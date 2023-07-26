@@ -8,7 +8,7 @@ import Block from '../Block';
 const block = bem('Table');
 
 function TableCell(props) {
-    return <Block {...props} static={true}>
+    return <Block {...props} statics={true}>
         {Children.map(props.children, (item) => {
             if (typeof item !== 'object') {
                 return item;

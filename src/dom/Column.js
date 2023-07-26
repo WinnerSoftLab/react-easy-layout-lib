@@ -23,7 +23,7 @@ export default class Column extends Component {
             alignSelf={this.props.alignSelf}
             grow={this.props.grow}
             shrink={this.props.shrink}
-            static={this.props.static}
+            statics={this.props.statics}
                >
             <Box
                 type={this.props.reverse ? Box.TYPE_COLUMN_REVERSE : Box.TYPE_COLUMN}
@@ -68,7 +68,7 @@ export default class Column extends Component {
         alignSelf: selfAlignPropType.isRequired,
         grow: PropTypes.bool.isRequired,
         shrink: PropTypes.bool.isRequired,
-        static: PropTypes.bool.isRequired
+        statics: PropTypes.bool.isRequired
     };
 
     static defaultProps = {
@@ -86,6 +86,6 @@ export default class Column extends Component {
         alignSelf: AUTO,
         grow: true,
         shrink: true,
-        static: false
+        statics: false
     };
 }
