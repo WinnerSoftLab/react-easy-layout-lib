@@ -56,9 +56,12 @@ export default class Block extends Component {
     };
 
     render() {
-        const {height, width} = this.props;
+        const {
+            className, isRowWrapper, size, width, height, alignSelf, grow,
+            shrink, static: staticProp, style, children, ...otherProp
+        } = this.props;
 
-        const styles = Object.assign({}, this.props.style || {});
+        const styles = Object.assign({}, style || {});
 
         if (width) {
             styles.width = typeof width === 'number' ? `${width}px` : width;
@@ -68,23 +71,22 @@ export default class Block extends Component {
             styles.height = typeof height === 'number' ? `${height}px` : height;
         }
 
-        if (this.props.size) {
-            styles.flexBasis = this.props.size;
-            styles.WebkitFlexBasis = this.props.size;
-            styles.MsFlexPreferredSize = this.props.size;
+        if (size) {
+            styles.flexBasis = size;
+            styles.WebkitFlexBasis = size;
+            styles.MsFlexPreferredSize = size;
         }
 
-
-        return <div style={styles} className={bem({
-            isRowWrapper: this.props.isRowWrapper,
-            static: this.props.static,
-            alignSelf: this.props.alignSelf,
-            grow: this.props.grow && !this.props.static,
-            noGrow: !this.props.grow || this.props.static,
-            shrink: this.props.shrink && !this.props.static,
-            noShrink: !this.props.shrink || this.props.static
-        }) + ' ' + (this.props.className  || '')}>
-            {this.props.children}
+        return <div {...otherProp} style={styles} className={bem({
+            isRowWrapper: isRowWrapper,
+            static: staticProp,
+            alignSelf: alignSelf,
+            grow: grow && !staticProp,
+            noGrow: !grow || staticProp,
+            shrink: shrink && !staticProp,
+            noShrink: !shrink || staticProp
+        }) + ' ' + (className  || '')}>
+            {children}
         </div>;
     }
 }
