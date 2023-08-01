@@ -1,5 +1,5 @@
 {
-  "name": "react-easy-layout-fork",
+  "name": "react-easy-layout-lib",
   "version": "0.15.9",
   "description": "Advanced react layout library that easy to use",
   "main": "lib/index.js",
@@ -29,14 +29,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wwwsevolod/react-easy-layout.git"
+    "url": "git+https://github.com/WinnerSoftLab/react-easy-layout-lib.git"
   },
-  "author": "wwwsevolod",
+  "author": "Clickadu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wwwsevolod/react-easy-layout/issues"
+    "url": "https://github.com/WinnerSoftLab/react-easy-layout-lib/issues"
   },
-  "homepage": "https://github.com/wwwsevolod/react-easy-layout#readme",
+  "homepage": "https://github.com/WinnerSoftLab/react-easy-layout-lib",
   "devDependencies": {
     "autoprefixer": "^6.3.1",
     "babel": "^6.3.26",
