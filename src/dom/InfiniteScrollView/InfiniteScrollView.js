@@ -351,6 +351,7 @@ export default class InfiniteScrollView extends Component {
     }
 
     componentWillUnmount() {
+        clearTimeout(this.timerOfDebouncedTilesInvalation);
         this.clearScrollListener();
         if (this.frame) {
             cancelFrame(this.frame);
